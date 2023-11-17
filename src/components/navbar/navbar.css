@@ -1,0 +1,41 @@
+.navbar_container {
+  height: 3rem;
+  background: rgba(0, 0, 0, 0.49);
+  margin-bottom: 2rem;
+}
+
+.navbar_link {
+  height: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.title_logo {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.logo {
+  height: 1.5rem;
+  width: 1.5rem;
+  background: transparent;
+}
+
+.refresh {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.refresh_img {
+  border-radius: 50%;
+  align-self: center;
+  height: 15px;
+}
+
+.refresh-title {
+  font-size: 0.875rem;
+}

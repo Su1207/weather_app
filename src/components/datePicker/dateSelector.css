@@ -1,0 +1,35 @@
+.date-picker_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.date-pick-day {
+  position: relative;
+  top: 0.7rem;
+  left: 1.5rem;
+  font-size: 0.65rem;
+}
+
+.calendar_container {
+  display: flex;
+}
+
+.calendar_logo {
+  position: relative;
+  top: 0.3rem;
+  left: 2rem;
+  height: 1.4rem;
+  width: 1.4rem;
+  z-index: 555;
+}
+
+.date-picker {
+  width: 8rem;
+  height: 2rem;
+  border-radius: 3px;
+  color: rgba(70, 70, 70, 1);
+  background: rgba(217, 217, 217, 1);
+  border: 1px solid rgba(70, 70, 70, 1);
+  padding-left: 2.5rem;
+}
