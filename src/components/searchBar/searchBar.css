@@ -44,8 +44,10 @@
 @media screen and (max-width: 730px) {
   .middle-bar {
     flex-direction: column;
+    width: 80vw;
+    margin: auto;
   }
-  .city-location {
+  .city_full_location {
     order: 1;
   }
   .input_search {
@@ -53,8 +55,18 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 476px) {
   .input_search {
     width: 80vw;
+  }
+  .city-name {
+    font-size: 1.2rem;
+  }
+  .location_logo {
+    height: 20px;
+    width: 20px;
+  }
+  .city_direction {
+    font-size: 0.7rem;
   }
 }
