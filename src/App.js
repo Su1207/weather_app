@@ -13,14 +13,26 @@ function App() {
   const [city, updateCity] = useState("");
   const [weather, setWeather] = useState({});
 
+  const [cityName, setCityName] = useState({});
+
   /*
-    Search button is pressed. Make a fetch call to the Open Weather Map API.
+    Search button is pressed. Make a fetch call to the Open Weather Map API.\
   */
   const searchPressed = () => {
-    fetch(`${api.base}weather?q=${city}&units=metric&APPID=${api.key}`)
+    fetch(
+      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${api.key}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setCityName(data[0]);
+        return fetch(
+          `https://api.openweathermap.org/data/3.0/onecall?lat=${data[0].lat}&lon=${data[0].lon}&exclude=hourly,minutely&units=metric&appid=${api.key}`
+        );
+      })
       .then((res) => res.json())
       .then((result) => {
         setWeather(result);
+        console.log(weather);
       });
   };
 
@@ -33,12 +45,13 @@ function App() {
       <Navbar />
 
       <SearchBar
+        cityName={cityName}
         weather={weather}
         searchPressed={searchPressed}
         onCitySelect={handleSelectCity}
       />
 
-      {typeof weather.main !== "undefined" ? (
+      {typeof weather.current !== "undefined" ? (
         <WeatherCard weather={weather} />
       ) : (
         ""

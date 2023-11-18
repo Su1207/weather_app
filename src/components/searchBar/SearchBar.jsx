@@ -3,14 +3,21 @@ import "./searchBar.css";
 import location from "../../assets/location.png";
 import Search from "../../assets/search.png";
 
-const SearchBar = ({ weather, searchPressed, onCitySelect }) => {
+const SearchBar = ({ weather, searchPressed, onCitySelect, cityName }) => {
   const [search, setSearch] = useState("");
+
+  const handleInput = (e) => {
+    const inputValue = e.target.value;
+    onCitySelect(inputValue);
+  };
 
   return (
     <div className="middle-bar">
       <div className="city-location">
         <img src={location} alt="location" className="location_logo" />
-        <h2 className="city-name">{weather.name}</h2>
+        <h2 className="city-name">
+          {cityName.name}, {cityName.state}
+        </h2>
       </div>
 
       <div className="search-bar">
@@ -18,10 +25,8 @@ const SearchBar = ({ weather, searchPressed, onCitySelect }) => {
           type="text"
           className="input_search"
           placeholder="Search your city here..."
-          onChange={(e) => {
-            setSearch(e.target.value);
-            onCitySelect(e.target.value);
-          }}
+          onChange={(e) => setSearch(e.target.value)}
+          onInput={handleInput}
         />
         <img
           src={Search}
