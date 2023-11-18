@@ -24,16 +24,17 @@ const SearchBar = ({ weather, searchPressed, onCitySelect, cityName }) => {
   return (
     <div className="middle-bar">
       <div className="city_full_location">
-        <div className="city-location">
-          <img src={location} alt="location" className="location_logo" />
-          {typeof cityName.name !== "undefined" ? (
+        {typeof cityName.name !== "undefined" ? (
+          <div className="city-location">
+            <img src={location} alt="location" className="location_logo" />
             <h2 className="city-name">
               {cityName.name}, {cityName.state}
             </h2>
-          ) : (
-            ""
-          )}
-        </div>
+          </div>
+        ) : (
+          ""
+        )}
+
         {typeof cityName.name !== "undefined" ? (
           <div className="city_direction">
             {convertDecimalToDMS(cityName.lat, true)} &{" "}

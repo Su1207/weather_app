@@ -74,6 +74,7 @@
     justify-content: start;
     overflow-x: scroll;
     overflow-y: hidden;
+    height: 50vh;
   }
 
   .weathercard_container {
