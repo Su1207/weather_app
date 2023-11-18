@@ -51,7 +51,7 @@ const WeatherCard = ({ weather }) => {
         <div className="weathercard_maincontainer">
           <div className="condition">
             <img
-              src=" https://openweathermap.org/img/wn/10d@2x.png"
+              src={`https://openweathermap.org/img/wn/${weather.daily[0].weather[0].icon}@2x.png`}
               alt="icon"
               className="sunny_logo"
             />
@@ -79,7 +79,7 @@ const WeatherCard = ({ weather }) => {
         <div className="weathercard_maincontainer">
           <div className="condition">
             <img
-              src=" https://openweathermap.org/img/wn/10d@2x.png"
+              src={`https://openweathermap.org/img/wn/${weather.daily[1].weather[0].icon}@2x.png`}
               alt="icon"
               className="sunny_logo"
             />
@@ -107,7 +107,7 @@ const WeatherCard = ({ weather }) => {
         <div className="weathercard_maincontainer">
           <div className="condition">
             <img
-              src=" https://openweathermap.org/img/wn/10d@2x.png"
+              src={`https://openweathermap.org/img/wn/${weather.daily[2].weather[0].icon}@2x.png`}
               alt="icon"
               className="sunny_logo"
             />
@@ -135,7 +135,7 @@ const WeatherCard = ({ weather }) => {
         <div className="weathercard_maincontainer">
           <div className="condition">
             <img
-              src=" https://openweathermap.org/img/wn/10d@2x.png"
+              src={`https://openweathermap.org/img/wn/${weather.daily[3].weather[0].icon}@2x.png`}
               alt="icon"
               className="sunny_logo"
             />
@@ -163,7 +163,7 @@ const WeatherCard = ({ weather }) => {
         <div className="weathercard_maincontainer">
           <div className="condition">
             <img
-              src=" https://openweathermap.org/img/wn/10d@2x.png"
+              src={`https://openweathermap.org/img/wn/${weather.daily[4].weather[0].icon}@2x.png`}
               alt="icon"
               className="sunny_logo"
             />
