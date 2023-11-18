@@ -3,7 +3,7 @@ import "./navbar.css";
 import Refresh from "../../assets/refresh.png";
 import logo from "../../assets/logo.png";
 
-const Navbar = () => {
+const Navbar = ({ handleRefresh }) => {
   return (
     <div className="navbar_container">
       <nav className="navbar_link">
@@ -14,7 +14,9 @@ const Navbar = () => {
 
         <div className="refresh">
           <img src={Refresh} alt="refresh" className="refresh_img" />
-          <span className="refresh-title">Refresh</span>
+          <button className="refresh-title" onClick={handleRefresh}>
+            Refresh
+          </button>
         </div>
       </nav>
     </div>

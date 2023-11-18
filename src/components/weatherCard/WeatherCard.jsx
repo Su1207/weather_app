@@ -4,7 +4,7 @@ import "./weathercard.css";
 import DateSelector from "../datePicker/DateSelector";
 
 const WeatherCard = ({ weather }) => {
-  let sunSetHours12, sunRiseMin, date;
+  let sunSetHours12, sunRiseMin12, date;
 
   const dateToString = (time) => {
     date = new Date(time * 1000); // Multiply by 1000 to convert from seconds to milliseconds
@@ -23,8 +23,9 @@ const WeatherCard = ({ weather }) => {
 
   const timeToMin = (time) => {
     let sunRise = new Date(time * 1000);
-    sunRiseMin = sunRise.getMinutes();
-    return sunRiseMin;
+    let sunRiseMin = sunRise.getMinutes();
+    sunRiseMin12 = sunRiseMin < 10 ? `0${sunRiseMin}` : sunRiseMin;
+    return sunRiseMin12;
   };
 
   // console.log(sunSetHours12, sunSetMin);

@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import WeatherCard from "./components/weatherCard/WeatherCard";
 import SearchBar from "./components/searchBar/SearchBar";
+import { ToastContainer, toast } from "react-toastify";
 
 const api = {
   key: "0a8d9abf92f4ed538d76bb84935eab8a",
@@ -32,7 +33,6 @@ function App() {
       .then((res) => res.json())
       .then((result) => {
         setWeather(result);
-        console.log(weather);
       });
   };
 
@@ -40,9 +40,29 @@ function App() {
     updateCity(city);
   };
 
+  const handleRefresh = () => {
+    // Check if a city is selected before making the API call
+    if (city) {
+      searchPressed();
+      toast("Page Refreshed");
+    }
+  };
+
   return (
     <div className="App">
-      <Navbar />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <Navbar handleRefresh={handleRefresh} />
 
       <SearchBar
         cityName={cityName}
