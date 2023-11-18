@@ -24,7 +24,6 @@
 
 .input_search {
   padding: 0.5rem;
-  font-family: cursive;
   border-radius: 8px;
   border-color: transparent;
   width: 15rem;
@@ -58,6 +57,7 @@
 @media screen and (max-width: 476px) {
   .input_search {
     width: 80vw;
+    padding: 0.8rem;
   }
   .city-name {
     font-size: 1.2rem;
@@ -68,5 +68,8 @@
   }
   .city_direction {
     font-size: 0.7rem;
+  }
+  .search-logo {
+    top: 0.8rem;
   }
 }
