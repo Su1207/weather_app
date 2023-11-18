@@ -3,7 +3,6 @@ import { useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import WeatherCard from "./components/weatherCard/WeatherCard";
 import SearchBar from "./components/searchBar/SearchBar";
-import { ToastContainer, toast } from "react-toastify";
 
 const api = {
   key: "0a8d9abf92f4ed538d76bb84935eab8a",
@@ -21,7 +20,7 @@ function App() {
   */
   const searchPressed = () => {
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${api.key}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${api.key}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -44,24 +43,12 @@ function App() {
     // Check if a city is selected before making the API call
     if (city) {
       searchPressed();
-      toast("Page Refreshed");
+      console.log("Page Refreshed");
     }
   };
 
   return (
     <div className="App">
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
       <Navbar handleRefresh={handleRefresh} />
 
       <SearchBar

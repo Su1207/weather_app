@@ -62,9 +62,6 @@
     grid-template-columns: repeat(3, 1fr);
   }*/
 
-  .weathercard_container {
-  }
-
   .weather_container {
     gap: 0.5rem;
     margin: 0 0.5rem 0 0;
@@ -75,7 +72,7 @@
 @media screen and (max-width: 730px) {
   .weather_container {
     justify-content: start;
-    overflow-y: scroll;
+    overflow-x: scroll;
   }
 
   .weathercard_container {
