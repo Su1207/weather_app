@@ -1,6 +1,4 @@
-*,
-::after,
-::before {
+* {
   box-sizing: border-box;
 }
 
@@ -8,8 +6,15 @@ body {
   margin-bottom: 5rem;
 }
 
-.cards {
+/* .cards {
   display: flex;
   gap: 2rem;
   margin: auto 5rem;
+  justify-content: space-around;
+} */
+
+@media screen and (max-width: 730px) {
+  /* .cards {
+    overflow-y: scroll;
+  } */
 }

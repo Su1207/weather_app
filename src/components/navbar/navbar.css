@@ -1,5 +1,6 @@
 .navbar_container {
   height: 3rem;
+  width: 100vw;
   background: rgba(0, 0, 0, 0.49);
   margin-bottom: 2rem;
 }

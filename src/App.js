@@ -2,7 +2,6 @@ import "./App.css";
 import { useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import WeatherCard from "./components/weatherCard/WeatherCard";
-import CardValue from "./components/weatherCard/CardValue";
 import SearchBar from "./components/searchBar/SearchBar";
 
 const api = {
@@ -39,18 +38,13 @@ function App() {
         onCitySelect={handleSelectCity}
       />
 
-      <div className="cards">
-        <CardValue />
-        {typeof weather.main !== "undefined" ? (
-          <div className="cards">
-            <WeatherCard weather={weather} />
-          </div>
-        ) : (
-          ""
-        )}
+      {typeof weather.main !== "undefined" ? (
+        <WeatherCard weather={weather} />
+      ) : (
+        ""
+      )}
 
-        {/* If weather is not undefined display results from API */}
-      </div>
+      {/* If weather is not undefined display results from API */}
     </div>
   );
 }

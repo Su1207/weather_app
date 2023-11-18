@@ -36,3 +36,21 @@
   top: 6px;
   right: 8px;
 }
+
+@media screen and (max-width: 730px) {
+  .middle-bar {
+    flex-direction: column;
+  }
+  .city-location {
+    order: 1;
+  }
+  .input_search {
+    width: 25rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .input_search {
+    width: 80vw;
+  }
+}
