@@ -38,7 +38,7 @@ const SearchBar = ({ weather, searchPressed, onCitySelect, cityName }) => {
         {typeof cityName.name !== "undefined" ? (
           <div className="city_direction">
             {convertDecimalToDMS(cityName.lat, true)} &{" "}
-            {convertDecimalToDMS(cityName.lat, false)}
+            {convertDecimalToDMS(cityName.lon, false)}
           </div>
         ) : (
           ""
